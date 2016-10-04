@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.ufc.great.model.ClusterRoom;
+import br.ufc.great.model.GreatDataCenter;
+import br.ufc.great.model.PowerGeneratorRoom;
+
 /**
  * Servlet implementation class GreatDataCenterGateway
  */
@@ -34,6 +38,25 @@ public class GreatDataCenterGateway extends HttpServlet {
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		GreatDataCenter gdc = new GreatDataCenter();
+		ClusterRoom cr = new ClusterRoom();
+		PowerGeneratorRoom pgr = new PowerGeneratorRoom();
+		
+		
+		String temperature = request.getParameter("temperatura");
+		String humidity = request.getParameter("temperatura");
+		String noise = request.getParameter("temperatura");
+		String hourmeter = request.getParameter("temperatura");
+		String fuel_level = request.getParameter("temperatura");
+		
+		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		
+		
 		
 	}
 
