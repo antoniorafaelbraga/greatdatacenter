@@ -3,7 +3,7 @@ package br.ufc.great.model;
 public class PowerGeneratorRoom {
 	private float noise;
 	private float hourmeter;
-	private float fuel_level;
+	private float fuelLevel;
 
 	
 	public float getNoise() {
@@ -18,10 +18,11 @@ public class PowerGeneratorRoom {
 	public void setHourmeter(float hourmeter) {
 		this.hourmeter = hourmeter;
 	}
-	public float getFuel_level() {
-		return fuel_level;
+	public float getFuelLevel() {
+		return fuelLevel;
 	}
-	public void setFuel_level(float fuel_level) {
-		this.fuel_level = fuel_level;
+	public void setFuelLevel(float fuelLevel) {
+		this.fuelLevel = fuelLevel;
 	}
+
 }

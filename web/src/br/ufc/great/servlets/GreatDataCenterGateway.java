@@ -45,19 +45,19 @@ public class GreatDataCenterGateway extends HttpServlet {
 		
 		
 		String temperature = request.getParameter("temperatura");
-		String humidity = request.getParameter("temperatura");
-		String noise = request.getParameter("temperatura");
-		String hourmeter = request.getParameter("temperatura");
-		String fuel_level = request.getParameter("temperatura");
+		String humidity = request.getParameter("humidity");
+		String noise = request.getParameter("noise");
+		String hourmeter = request.getParameter("hourmeter");
+		String fuel_level = request.getParameter("fuel_level");
 		
 		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
-		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
-		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
-		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
-		cr.setTemperature(temperature!=null?Float.parseFloat(temperature):0);
+		cr.setHumidity(humidity!=null?Float.parseFloat(humidity):0);
+		pgr.setNoise(noise!=null?Float.parseFloat(noise):0);
+		pgr.setHourmeter(hourmeter!=null?Float.parseFloat(hourmeter):0);
+		pgr.setFuelLevel(fuel_level!=null?Float.parseFloat(fuel_level):0);
 		
-		
-		
+		gdc.setCr(cr);
+		gdc.setPgr(pgr);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
