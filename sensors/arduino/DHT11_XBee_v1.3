@@ -1,0 +1,35 @@
+#include "DHT.h"
+#include "CountUpDownTimer.h"
+
+#define DHTPIN A1 // pino que estamos conectado
+#define DHTTYPE DHT11 // DHT 11
+
+CountUpDownTimer T(DOWN, HIGH);
+DHT dht(DHTPIN, DHTTYPE);
+
+String stringTemp, stringHumi, json;
+float LastTemp = 0;
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  T.SetTimer(0,1,0);
+  T.StartTimer();
+
+  stringTemp = String("{\'temperature\': ");
+  stringHumi = String("\'humidity\': ");
+}
+
+void loop() {
+  T.Timer();
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+  json = stringTemp + t + ", " + stringHumi + h + "}";
+
+  if(t != LastTemp || T.TimeCheck(0,0,0)){
+    Serial.println(json);
+    LastTemp = t;
+    T.ResetTimer();
+  }
+  delay(1000);
+}
