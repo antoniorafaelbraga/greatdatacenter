@@ -8,7 +8,8 @@
 <body>
 	
 	<form action="/GreatDataCenter/GreatDataCenterGateway">
-	
+	<center>GREat Data Center</center>
+
 		ClusterRoom <br><br>
 	
 		Temperature <input type="text" name="temperature" id="temperature"> <br>
