@@ -17,4 +17,9 @@ public class ClusterRoom {
 	public void setHumidity(float humidity) {
 		this.humidity = humidity;
 	}
+	
+	@Override
+	public String toString() {
+		return "{\"temperature\" : \""+temperature+"\", \"humidity\" : \""+humidity+"\"}";
+	}
 }
