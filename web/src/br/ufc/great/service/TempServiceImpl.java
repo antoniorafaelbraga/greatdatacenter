@@ -8,6 +8,8 @@ targetNamespace = "http://192.168.1.52:9876/temp/wsdl", endpointInterface = "Tem
 public class TempServiceImpl implements TempService {
 	@Override
 	public float getTempC() throws java.io.IOException, java.lang.InterruptedException {
+
+		
 		// Get runtime
 		java.lang.Runtime rt = java.lang.Runtime.getRuntime();
 		// Start a new process & run python
@@ -21,6 +23,8 @@ public class TempServiceImpl implements TempService {
 		// And print each line
 		String s = null;
 		s = reader.readLine();
+
+		
 		return Float.parseFloat(s);
 	}
 
