@@ -8,7 +8,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-public class ConnectionDB {
+public class ConnectionMongodb {
 
 	public static void main(String[] args) {
 		MongoClientURI uri = new MongoClientURI("mongodb://root:5mEzEp40@52.67.87.15:27017/?authSource=admin");

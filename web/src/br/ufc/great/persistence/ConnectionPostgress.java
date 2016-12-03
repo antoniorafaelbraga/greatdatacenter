@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class JDBCExample {
+public class ConnectionPostgress {
 
 	public static void main(String[] argv) {
 
