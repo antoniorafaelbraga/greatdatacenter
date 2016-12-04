@@ -24,5 +24,4 @@ public class GreatDataCenterCloud extends HttpServlet {
 		ConnectionDB conn = new ConnectionDB();
         out.println(conn.getLastDocClusterRoom().toString());
 	}
-
 }

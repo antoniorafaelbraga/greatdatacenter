@@ -1,6 +1,7 @@
 package br.ufc.great.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,7 +49,6 @@ public class GreatDataCenterGateway extends HttpServlet {
 		
 		gdc.setCr(cr);
 		gdc.setPgr(pgr);
-		
-		
+
 	}
 }
