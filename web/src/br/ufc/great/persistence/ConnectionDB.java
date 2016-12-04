@@ -99,8 +99,8 @@ public class ConnectionDB {
 
     public static void main(String args[]){
         ConnectionDB c = new ConnectionDB();
-        //c.getCountDocsClusterRoom();
-        //c.getAllDocClusterRoom();
+        c.getCountDocsClusterRoom();
+        c.getAllDocClusterRoom();
         c.getLastDocClusterRoom();
         c.closeConnection();
     }
