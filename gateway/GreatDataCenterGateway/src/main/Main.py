@@ -9,7 +9,7 @@ from business import Business
 
 if __name__ == '__main__':
     
-    #while True:
+    while True:
     #for x in range(0, 2):
         ''' 
             Ler dados da interface serialgw
