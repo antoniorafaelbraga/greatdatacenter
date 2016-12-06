@@ -9,8 +9,8 @@ from business import Business
 
 if __name__ == '__main__':
     
-    #while True:
-    for x in range(0, 2):
+    while True:
+    #for x in range(0, 2):
         ''' 
             Ler dados da interface serialgw
         '''
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         '''
         print "=============================BD============================="
         c = Connection.Connection('52.67.87.15', 27017)
-        c.insertJson(jsonsensors)
+        c.insertJsonSensors(jsonsensors)
         print "============================================================"        
 
         '''
@@ -34,7 +34,6 @@ if __name__ == '__main__':
         '''
         print "=============================Status========================="
         jsonstatus = Business.Business().getStatus(jsonsensors)
-        c.salveStatus(jsonstatus)
         print "============================================================"
         
         '''

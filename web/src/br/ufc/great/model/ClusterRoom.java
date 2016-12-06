@@ -1,6 +1,8 @@
 package br.ufc.great.model;
 
 public class ClusterRoom {
+
+	private String date;
 	private float temperature;
 	private float humidity;
 
@@ -17,9 +19,15 @@ public class ClusterRoom {
 	public void setHumidity(float humidity) {
 		this.humidity = humidity;
 	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	
 	@Override
 	public String toString() {
-		return "{\"temperature\" : \""+temperature+"\", \"humidity\" : \""+humidity+"\"}";
+		return "{\"temperature\" : \""+temperature+"\", \"humidity\" : \""+humidity+"\", \"date\" : \""+date+"\"}";
 	}
 }
