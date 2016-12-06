@@ -86,6 +86,7 @@ public class ConnectionDB {
             cursor = find.iterator();
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
+                cr.setDate(doc.get("date").toString());
                 cr.setTemperature(Float.parseFloat(doc.get("temperature").toString()));
                 cr.setHumidity(Float.parseFloat(doc.get("humidity").toString()));
             }
@@ -151,6 +152,7 @@ public class ConnectionDB {
             while (cursor.hasNext()) {
             	cr = new ClusterRoom();
                 Document doc = cursor.next();
+                cr.setDate(doc.get("date").toString());
                 cr.setTemperature(Float.parseFloat(doc.get("temperature").toString()));
                 cr.setHumidity(Float.parseFloat(doc.get("humidity").toString()));
                 crList.add(cr);
