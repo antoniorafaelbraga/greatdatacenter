@@ -16,12 +16,15 @@ class Business(object):
     def __init__(self):
         pass
     
-    def getStatus(self, jsondict):
+    @staticmethod
+    def getStatus(id_sensor):
 
-        c = Connection.Connection('52.67.87.15', 27017)
-        id_sensor = jsondict['id']
+        c = Connection.Connection('192.168.0.105', 27017)
         
         if id_sensor == 1:
+            sensor1 = c.getSensor1()
+            jsondict = sensor1.next()    
+
             voltage_companhia = jsondict['voltage_companhia'] #companhia
 
             sensor3 = c.getSensor3()
@@ -49,6 +52,9 @@ class Business(object):
             
             c.setStatus(last_status)
         elif id_sensor == 2:
+            sensor2 = c.getSensor2()
+            jsondict = sensor2.next()
+            
             temperature = jsondict['temperature']
             humidity = jsondict['humidity']
 
@@ -90,6 +96,9 @@ class Business(object):
             
             c.setStatus(last_status)
         elif id_sensor == 3:
+            sensor3 = c.getSensor3()
+            jsondict = sensor3.next()            
+            
             temperature = jsondict['temperature']
             humidity = jsondict['humidity']
             voltage_gerador = jsondict['voltage_gerador'] #gerador
@@ -141,7 +150,7 @@ class Business(object):
             
             c.setStatus(last_status)
         c.closeConnection()
-        return ""
+        return last_status['mensagem']
 
     def emitirAlerta(self, mensagem):
         print mensagem
