@@ -5,7 +5,7 @@ Created on 21 de nov de 2016
 '''
 from serialgw import SerialGw
 from persistence import Connection
-from business import Business
+
 
 if __name__ == '__main__':
     
@@ -29,20 +29,6 @@ if __name__ == '__main__':
         c.insertJsonSensors(jsonsensors)
         print "============================================================"        
 
-        '''
-            Define status do ambiente
-        '''
-        print "=============================Status========================="
-        jsonstatus = Business.Business().getStatus(jsonsensors)
-        print "============================================================"
-        
-        '''
-            Faz analise preditiva do estado do sistema
-        '''
-        print "=============================Predicao======================="
-        jsonpredicao = Business.Business().predizStatus()
-        print "============================================================"
-                
         '''
             Fecha conexao com banco de dados
         '''
