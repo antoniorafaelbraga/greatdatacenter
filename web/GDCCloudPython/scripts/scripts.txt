@@ -1,0 +1,7 @@
+db.createCollection( "log", { capped: true, size: 100000 } )
+
+List Rules by Specification
+sudo iptables -S
+
+llow only port 8000
+sudo iptables -A INPUT -i eth0 -p tcp --dport 8000 -j ACCEPT

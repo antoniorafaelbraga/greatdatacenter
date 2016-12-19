@@ -15,5 +15,5 @@ class FlaskClient (object):
         Constructor
         '''
         
-    re = urllib2.urlopen("http://192.168.1.7:5000/GDCcloud?idsensor=1").read()
+    re = urllib2.urlopen("http://192.168.0.62:5000/GDCcloud?idsensor=1").read()
     print re      
