@@ -41,7 +41,7 @@ if __name__ == '__main__':
         
                 
         '''
-            Fecha conexao com banco de dados
+            Fecha conexao com banco de dados eu mesmo
         '''
         c.closeConnection()
         
