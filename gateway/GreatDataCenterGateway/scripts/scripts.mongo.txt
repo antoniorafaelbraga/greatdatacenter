@@ -1,8 +1,0 @@
-use greatDataCenter
-db.createUser(
-   {
-     user: "gdc",
-     pwd: "gdc",
-     roles: [ "readWrite", "dbAdmin" ]
-   }
-)

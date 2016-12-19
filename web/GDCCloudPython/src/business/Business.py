@@ -18,8 +18,9 @@ class Business(object):
     
     @staticmethod
     def getStatus(id_sensor):
-
-        c = Connection.Connection('192.168.0.105', 27017)
+        
+        msg = ''
+        c = Connection.Connection('192.168.0.62', 27017)
         
         if id_sensor == 1:
             sensor1 = c.getSensor1()
@@ -49,6 +50,8 @@ class Business(object):
             del last_status['_id']
             last_status['voltage_companhia'] = voltage_companhia
             last_status['date'] = datetime.datetime.utcnow()
+            
+            msg = last_status['mensagem']
             
             c.setStatus(last_status)
         elif id_sensor == 2:
@@ -92,7 +95,9 @@ class Business(object):
             del last_status['_id']
             last_status['temperature'] = temperature
             last_status['humidity'] = humidity            
-            last_status['timestamp'] = datetime.datetime.utcnow()            
+            last_status['timestamp'] = datetime.datetime.utcnow()
+            
+            msg = last_status['mensagem']  
             
             c.setStatus(last_status)
         elif id_sensor == 3:
@@ -148,9 +153,11 @@ class Business(object):
             last_status['voltage_gerador'] = voltage_gerador
             last_status['date'] = datetime.datetime.utcnow()
             
+            msg = last_status['mensagem']
+            
             c.setStatus(last_status)
         c.closeConnection()
-        return last_status['mensagem']
+        return msg
 
     def emitirAlerta(self, mensagem):
         print mensagem

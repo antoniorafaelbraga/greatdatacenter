@@ -32,6 +32,11 @@ class Connection(object):
         
         print 'Salvou o json com id: '+str(json_id)
     
+    def insertTimeExecution(self, jsontime):
+        cr = self.db.timeexecution
+        json_id = cr.insert_one(jsontime).inserted_id
+        print 'Salvou o json do tempo: '+str(json_id)
+    
     # persistindo dados do sensor 1
     def getSensor1(self):
         sensor1 = self.db.sensor1

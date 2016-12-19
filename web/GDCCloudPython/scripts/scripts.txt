@@ -1,7 +1,29 @@
+use greatDataCenter
+db.createUser(
+   {
+     user: "gdc",
+     pwd: "gdc",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+)
+
 db.createCollection( "log", { capped: true, size: 100000 } )
 
 List Rules by Specification
 sudo iptables -S
 
-llow only port 8000
+Allow only port 8000
 sudo iptables -A INPUT -i eth0 -p tcp --dport 8000 -j ACCEPT
+
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo pip install pymongo
+
+
+
+sudo iptables -S
+sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
+export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
+python gdc/main/Main.py
+
+ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com

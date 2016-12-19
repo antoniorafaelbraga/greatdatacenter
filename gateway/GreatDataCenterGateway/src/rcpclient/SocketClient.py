@@ -6,15 +6,10 @@ Created on 18 de dez de 2016
 
 import socket
 
-'''  classdocs  '''
-class MyClass(object):
-
-    ''' Constructor '''
-    def __init__(self, params):
-        pass
+if __name__ == '__main__':
         
         
-    def socketConn(self):    
+    #def socketConn(self):    
         HOST = '192.168.0.62'     # Endereco IP do Servidor
         PORT = 5000            # Porta que o Servidor esta
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

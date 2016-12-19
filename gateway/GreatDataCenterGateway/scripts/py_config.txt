@@ -1,5 +1,4 @@
-export PYTHONPATH=$PYTHONPATH:/path/you/want/to/add
-
-sudo apt-get install python-setuptools
-sudo easy_install pip
-sudo pip install pymongo
+sudo iptables -S
+sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
+export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdn
+python gdc/main/Main.py
