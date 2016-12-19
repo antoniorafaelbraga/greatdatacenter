@@ -36,12 +36,12 @@ if __name__ == '__main__':
         '''
         print "=============================Status========================="
         socket = SocketGDCClient.SocketGDCClient('192.168.0.62', 8000)
-        socket.defineStatus()
+        socket.defineStatus(jsonsensors['id'])
         print "============================================================"        
         
                 
         '''
-            Fecha conexao com banco de dados eu mesmo
+            Fecha conexao com banco de dados
         '''
         c.closeConnection()
         
