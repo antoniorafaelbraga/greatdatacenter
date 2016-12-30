@@ -1,3 +1,3 @@
 # Great Data Center
 
-Um sistema de monitoramento para prevenção de catástrofes em ambientes de centro de dados. O sistema faz coleta de informações dos ambiente onde os equipamentos estão operando. Informações tais como: temperatura e umidade do ambiente. Com base nessas informações, o sistema atua nos equipamentos afim de evitar prejuízos financeiros através do desligamento de equipamentos e notificação de responsáveis. 
+A monitoring system for disaster prevention in data center environments. The system collects information such as temperature and humidity of the environment where the equipment is operating. Based on this information, the system notifies the equipment administrators and also disconnects the equipment in order to avoid financial losses.
