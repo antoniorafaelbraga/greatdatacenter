@@ -1,5 +1,0 @@
-sudo iptables -S
-sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
-
-export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
-python gdc/main/Main.py

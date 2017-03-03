@@ -1,14 +1,9 @@
 ---------------------------------------------------------------------
-Criando banco de dados
+Configurando o proxy
 ---------------------------------------------------------------------
-use greatDataCenter
-db.createUser(
-   {
-     user: "gdc",
-     pwd: "gdc",
-     roles: [ "readWrite", "dbAdmin" ]
-   }
-)
+sudo iptables -S
+sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
+
 
 ---------------------------------------------------------------------
 Instalando pymongo
@@ -19,18 +14,7 @@ sudo pip install pymongo
 
 
 ---------------------------------------------------------------------
-Configurando o proxy
----------------------------------------------------------------------
-sudo iptables -S
-sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
-
-
----------------------------------------------------------------------
 Colocando GDC no PATH do python e executando o GDC 
 ---------------------------------------------------------------------
 export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
 python gdc/main/Main.py
-
-
-
-ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com
