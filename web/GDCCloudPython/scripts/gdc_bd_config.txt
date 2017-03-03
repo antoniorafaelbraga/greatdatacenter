@@ -1,38 +1,54 @@
 ---------------------------------------------------------------------
-Criando banco de dados
+1 - Fazer download da Máquina Virtual com banco MongoDB configurado
 ---------------------------------------------------------------------
-use greatDataCenter
-db.createUser(
-   {
-     user: "gdc",
-     pwd: "gdc",
-     roles: [ "readWrite", "dbAdmin" ]
-   }
-)
+https://bitnami.com/stack/mongodb/virtual-machine  
 
 ---------------------------------------------------------------------
-Instalando pymongo
+2 - Iniciar a máquina virtual
+---------------------------------------------------------------------
+Usar, por exemplo, o VirtualBox.
+
+---------------------------------------------------------------------
+3 - Criar o banco de dados
+---------------------------------------------------------------------
+Usar, por exemplo, o cliente do MongoDB RoboMongo: https://robomongo.org/
+
+use greatDataCenter
+db.createUser({ user: "gdc", pwd: "gdc", roles: [ "readWrite", "dbAdmin" ]})
+db.createCollection("sensor1")
+db.createCollection("sensor2")
+db.createCollection("sensor3")
+
+db.sensor1.insertOne({ "id" : 1, "date" : new Date(), "voltage_companhia" : 0 });
+db.sensor2.insertOne({ "id" : 2, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0 });
+db.sensor3.insertOne({ "id" : 3, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0, "voltage_gerador" : 0 });
+
+---------------------------------------------------------------------
+4 - Instalar o pymongo
 ---------------------------------------------------------------------
 sudo apt-get install python-setuptools
 sudo easy_install pip
 sudo pip install pymongo
 
-
 ---------------------------------------------------------------------
-Configurando o proxy
+5 - Configurar o proxy para o socket
 ---------------------------------------------------------------------
 sudo iptables -S
 sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
 
+---------------------------------------------------------------------
+6 - Limpar as configurações do SSH 
+---------------------------------------------------------------------
+sudo apt-get purge openssh-server
+sudo apt-get install openssh-server
 
 ---------------------------------------------------------------------
-Colocando GDC no PATH do python e executando o GDC 
+7 - Colocar GDC no PATH do python e executar o GDC 
 ---------------------------------------------------------------------
 export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
 python gdc/main/Main.py
 
-
 ---------------------------------------------------------------------
-Acessando banco de dados da nuvem
+8 - Acessando banco de dados da nuvem
 ---------------------------------------------------------------------
 ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com
