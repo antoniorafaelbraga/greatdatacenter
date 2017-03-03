@@ -1,3 +1,6 @@
+---------------------------------------------------------------------
+Criando banco de dados
+---------------------------------------------------------------------
 use greatDataCenter
 db.createUser(
    {
@@ -7,23 +10,27 @@ db.createUser(
    }
 )
 
-db.createCollection( "log", { capped: true, size: 100000 } )
-
-List Rules by Specification
-sudo iptables -S
-
-Allow only port 8000
-sudo iptables -A INPUT -i eth0 -p tcp --dport 8000 -j ACCEPT
-
+---------------------------------------------------------------------
+Instalando pymongo
+---------------------------------------------------------------------
 sudo apt-get install python-setuptools
 sudo easy_install pip
 sudo pip install pymongo
 
 
-
+---------------------------------------------------------------------
+Configurando o proxy
+---------------------------------------------------------------------
 sudo iptables -S
 sudo iptables -A INPUT -i eth0 -p tcp --dport 5000 -j ACCEPT
+
+
+---------------------------------------------------------------------
+Colocando GDC no PATH do python e executando o GDC 
+---------------------------------------------------------------------
 export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
 python gdc/main/Main.py
+
+
 
 ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com
