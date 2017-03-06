@@ -51,4 +51,4 @@ python gdc/main/Main.py
 ---------------------------------------------------------------------
 8 - Acessando banco de dados da nuvem
 ---------------------------------------------------------------------
-ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com
+ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com 
