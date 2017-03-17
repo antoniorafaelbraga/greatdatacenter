@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">GREatDC</string>
+    <string name="main_screen_title">GREat Data Center</string>
+    <string name="temp_screen_title">Dados Temperatura</string>
+
+    <!-- tela 1-->
+    <string name="cluster_room">Sala do Cluster</string>
+    <string name="generator_room">Gerador de Energia</string>
+
+    <string name="humidity">Umidade do ambiente</string>
+    <string name="temperature">Temperatura</string>
+    <string name="noise">Nível de ruído do gerador</string>
+
+    <string name="energy">Energia</string>
+    <string name="energy_safety">Estável</string>
+    <string name="energy_alert">Oscilando</string>
+    <string name="energy_emergency">Sem energia</string>
+
+    <string name="status">Status do ambiente</string>
+    <string name="safety">Seguro</string>
+    <string name="alert">Alerta</string>
+    <string name="emergency">Emergência</string>
+
+    <string name="normal">Normal</string>
+
+
+    <!-- tela 2-->
+    <string name="chart_html">graph.html</string>
+    <string name="actual_temperature">Temperatura atual:</string>
+    <string name="temperature_history">Histórico de temperatura</string>
+    <string name="temperature_table">Temperatura (ºC)</string>
+    <string name="time">Tempo (h)</string>
+
+    <string-array name="hours_array">
+        <item>Últimas 24h</item>
+        <item>Últimas 12h</item>
+    </string-array>
+    <string name="title_activity_login">GReat Data Center</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">E-mail</string>
+    <string name="prompt_password">Senha (opcional)</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in_short">Entre</string>
+    <string name="error_invalid_email">Este e-mail é inválido</string>
+    <string name="error_invalid_password">Esta senha é muito curta</string>
+    <string name="error_incorrect_password">Esta senha está incorreta</string>
+    <string name="error_field_required">Este campo é obrigatório</string>
+    <string name="permission_rationale">"Permissão de contato necessária para prover completar automaticamente o e-mail"
+    </string>
+
+</resources>
