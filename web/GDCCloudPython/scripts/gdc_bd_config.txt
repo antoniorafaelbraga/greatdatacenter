@@ -18,10 +18,12 @@ db.createUser({ user: "gdc", pwd: "gdc", roles: [ "readWrite", "dbAdmin" ]})
 db.createCollection("sensor1")
 db.createCollection("sensor2")
 db.createCollection("sensor3")
+db.createCollection("cluster_room")
 
 db.sensor1.insertOne({ "id" : 1, "date" : new Date(), "voltage_companhia" : 0 });
 db.sensor2.insertOne({ "id" : 2, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0 });
 db.sensor3.insertOne({ "id" : 3, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0, "voltage_gerador" : 0 });
+db.cluster_room.insertOne({ "temperature" : 0.0, "voltage_gerador" : 0, "timestamp" : new Date(), humidity" : 0.0, "voltage_companhia" : 0, "mensagem" : "", "date" : new Date(), "codStatus" : 0 });
 
 ---------------------------------------------------------------------
 4 - Instalar o pymongo
@@ -43,12 +45,17 @@ sudo apt-get purge openssh-server
 sudo apt-get install openssh-server
 
 ---------------------------------------------------------------------
-7 - Colocar GDC no PATH do python e executar o GDC 
+7 - Copiar arquivos do GDC para a VM
+---------------------------------------------------------------------
+scp -r ~/workspace/GDCCloudPython/* bitnami@192.168.1.101:~/gdc/
+
+---------------------------------------------------------------------
+8 - Colocar GDC no PATH do python e executar o GDC 
 ---------------------------------------------------------------------
 export PYTHONPATH=$PYTHONPATH:/home/bitnami/gdc
 python gdc/main/Main.py
 
 ---------------------------------------------------------------------
-8 - Acessando banco de dados da nuvem
+9 - Acessando banco de dados da nuvem
 ---------------------------------------------------------------------
 ssh -i "bitnami-SLm_gY8.pem" ubuntu@ec2-52-67-224-242.sa-east-1.compute.amazonaws.com 
