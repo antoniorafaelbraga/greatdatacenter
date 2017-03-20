@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------
 1 - Fazer download da Máquina Virtual com banco MongoDB configurado
 ---------------------------------------------------------------------
-https://bitnami.com/stack/mongodb/virtual-machine  
+https://bitnami.com/stack/mongodb/virtual-machine 
+user: root
+pass: bitnami
 
 ---------------------------------------------------------------------
 2 - Iniciar a máquina virtual
@@ -23,7 +25,7 @@ db.createCollection("cluster_room")
 db.sensor1.insertOne({ "id" : 1, "date" : new Date(), "voltage_companhia" : 0 });
 db.sensor2.insertOne({ "id" : 2, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0 });
 db.sensor3.insertOne({ "id" : 3, "date" : new Date(), "temperature" : 0.0, "humidity" : 0.0, "voltage_gerador" : 0 });
-db.cluster_room.insertOne({ "temperature" : 0.0, "voltage_gerador" : 0, "timestamp" : new Date(), humidity" : 0.0, "voltage_companhia" : 0, "mensagem" : "", "date" : new Date(), "codStatus" : 0 });
+db.cluster_room.insertOne({ "temperature" : 0.0, "voltage_gerador" : 0, "timestamp" : new Date(), "humidity" : 0.0, "voltage_companhia" : 0, "mensagem" : "", "date" : new Date(), "codStatus" : 0 });
 
 ---------------------------------------------------------------------
 4 - Instalar o pymongo

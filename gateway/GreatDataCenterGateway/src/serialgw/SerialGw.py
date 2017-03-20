@@ -1,7 +1,6 @@
 '''
-Created on 21 de nov de 2016
-
-@author: rafaelbraga
+    Created on 21 de nov de 2016
+    @author: rafaelbraga
 '''
 import ast
 import serial
@@ -21,11 +20,9 @@ class SerialGw(object):
         ser.flush()
         json = ser.readline()
         jsonsensors = ast.literal_eval(json)
-        print json
         jsonsensors.update({"date": datetime.datetime.utcnow()})
         
         #jsonsensors = {'id': 1, 'voltage_companhia': 50, 'date': datetime.datetime.utcnow()}
-        #jsonsensors.update({"date": datetime.datetime.utcnow()})
         #jsonsensors = {'id': 2, 'temperature': 21.0, 'humidity': 50.0, 'date': datetime.datetime.utcnow()}
         #jsonsensors = {'id': 3, 'temperature': 21.0, 'humidity': 50.0, 'voltage_gerador': 70, 'date': datetime.datetime.utcnow()}
         print jsonsensors  
